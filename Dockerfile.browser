@@ -1,0 +1,21 @@
+FROM debian:bookworm-slim
+
+RUN apt-get update && apt-get install -y \
+    chromium \
+    xvfb \
+    procps \
+    curl \
+    --no-install-recommends \
+ && rm -rf /var/lib/apt/lists/*docker
+
+WORKDIR /app
+
+ENV DISPLAY=:99
+
+# Copy the execution script into the container and make it runnable
+COPY entrypoint.sh /app/entrypoint.sh
+#Execute any commands on top of the current image as a new layer and commit the results.
+RUN chmod +x /app/entrypoint.sh
+
+# specify the command that will always be run when a container starts from the image
+ENTRYPOINT ["/app/entrypoint.sh"]
