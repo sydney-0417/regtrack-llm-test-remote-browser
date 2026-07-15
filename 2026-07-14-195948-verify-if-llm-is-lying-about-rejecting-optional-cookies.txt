@@ -11,7 +11,7 @@
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
 
-내 노트: agent.py ran on force.com
+내 노트: agent.py ran on force
 
 ❯ What are the ways to verify what optional cookies browser Agent accepted      
   other than browser agent's own report or verdict?                             
